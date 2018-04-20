@@ -204,4 +204,11 @@ server
     }
 include vhost/*.conf;
 }
-
+'''
+___________________________________
+#########################
+lnmp++++++++++fastcgi   open dir 配置
+# PHP only, required if PHP was built with --enable-force-cgi-redirect
+fastcgi_param  REDIRECT_STATUS    200;
+fastcgi_param PHP_ADMIN_VALUE "open_basedir=$document_root/:/tmp/:/proc/:.:/usr/local/php/lib/php:/home/wwwroot/default/OneFaceBlog";
+#fastcgi_param PHP_ADMIN_VALUE "open_basedir= none";
